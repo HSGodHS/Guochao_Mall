@@ -1,6 +1,6 @@
 <template>
 <div>
-  商品信息
+  潮品信息
 
   <div>
   <br/>

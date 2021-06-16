@@ -1,49 +1,52 @@
 <template>
   <div id="app">
 <!--    <el-header></el-header>-->
-    <el-container style="height: 100%; border: 1px solid #eee">
-      <el-aside width="auto" style="background-color: rgb(238, 241, 246)">
-        <div class="app-side-logo">
+    <el-container style="height: 100%; border: 0px solid #eee">
+      <el-aside width="15%" id="el-aside">
+        <div class="app-side-logo" align="middle" style="margin: 0px">
           <img src="@/assets/logo.png"
-               :width=auto
-               height="60" />
+               :width=120
+               height="120" />
         </div>
 
         <el-menu router
                  :default-active="$route.path"
-                :collapse="isCollapse"
-><el-button  v-on:click="toggleSideBar"
-             style="margin-left: 0.2rem;
-        margin-top: 0.1rem"><i class="el-icon-menu" ></i>
-           </el-button>
+        >
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-s-goods"></i>
-               <span>商品管理</span></template>
+               <span>国潮首页</span></template>
             <el-menu-item-group>
               <el-menu-item index="/product/item">
-                   <span>商品</span></el-menu-item>
-              <el-menu-item index="/product/cart">
-                   <span>购物车</span></el-menu-item>
+                   <span>潮品大全</span></el-menu-item>
+
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-s-order"></i>
-                 <span>订单管理</span></template>
+                 <span>我的潮品</span></template>
             <el-menu-item-group>
+              <el-menu-item index="/product/cart">
+                   <span>我的购物车</span></el-menu-item>
               <el-menu-item index="/order/order">
-                <span>订单</span></el-menu-item>
+                <span>我的订单</span></el-menu-item>
 <!--              <el-menu-item index="/order/item">订单条目</el-menu-item>-->
 <!--              <el-menu-item index="/order/payment">支付信息</el-menu-item>-->
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-s-custom"></i>
-              <span>用户管理</span></template>
+              <span>个人信息</span></template>
             <el-menu-item-group>
               <el-menu-item index="/user/baseinfo">
                 <span>修改密码</span></el-menu-item>
               <el-menu-item index="/user/userinfo">
                 <span>个人资料</span></el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title"><i class="el-icon-user-solid"></i>
+              <span>管理员</span></template>
+            <el-menu-item-group>
               <el-menu-item index="/user/usermanage">
                 <span>用户管理</span></el-menu-item>
             </el-menu-item-group>
@@ -51,14 +54,13 @@
         </el-menu>
       </el-aside>
       <el-container>
-      <el-header>
+      <el-header id="el-header">
         <el-row>
         <div align="right">
           <el-dropdown trigger="hover"
                        :hide-on-click="false">
             <span class="el-dropdown-link">
-              {{ username }}
-              <span> ,欢迎来到国潮电商系统！</span>
+              <span><font color="white" size="4"> {{ username }}，欢迎来到国潮电商系统！</font></span>
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -93,6 +95,13 @@
         /*统一设置高度为100%*/
         height: 100%;
     }
+  #el-header{
+    background:url("../assets/top.png");
+    height: 100px;
+  }
+  #el-aside{
+    background:url("../assets/aside.png");
+  }
 
 </style>
 

@@ -91,6 +91,7 @@
     width: 100%;
     background-size: cover;
     position: fixed;
+
   }
   body{
     padding: 0;
@@ -101,8 +102,9 @@
     width: 30%;
     height: auto ;
     margin: 0 auto ;
-    margin-top: 10%;
+    margin-top: 14%;
     text-align: center;
+    padding:20px 50px;
   }
   .el-button {
     margin-left: 60px;
